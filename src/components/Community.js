@@ -2,24 +2,18 @@ import React, { useState } from 'react';
 import {Button,Nav} from 'react-bootstrap';
 import './App.css';
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import Community from './components/Community.ts'
 
 
-function App() {
-  // const [postTitle,setPostTitle] = useState(["중앙대학교 6p/매주 토요일 모각코", "토익 990목표/격주 일요일 6시"]);
-  // const [post,setPost] = useState(["박정훈 박호동 장민혁의 캡스톤 스터디를 도와주실 분 급구 디자이너 급해요","토익 만점으로 영어 부실 사람 드루와"]);
-  // const [status,setStatus] = useState([true,true]);
-  // const [secret,setSecret] = useState(["중앙대학교","SOPT","우아한형제들","선린인터넷고"]);
-  // let navigate = useNavigate();
+function Community() {
+  const [postTitle,setPostTitle] = useState(["중앙대학교 6p/매주 토요일 모각코", "토익 990목표/격주 일요일 6시"]);
+  const [post,setPost] = useState(["박정훈 박호동 장민혁의 캡스톤 스터디를 도와주실 분 급구 디자이너 급해요","토익 만점으로 영어 부실 사람 드루와"]);
+  const [status,setStatus] = useState([true,true]);
+  const [secret,setSecret] = useState(["중앙대학교","SOPT","우아한형제들","선린인터넷고"]);
+  let navigate = useNavigate();
 
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/community" element={<Community/>}/>
-        <Route path="/mystudy" element={ <div>마이스터디</div> } />
-        <Route path="/mypage" element={ <div>마이페이지</div> } />
-      </Routes>
-      {/* <div className='container'>
+    <div>
+      <div className='container'>
         <div className='header'>
           <div className='logo'>ㄱㅂㅎㄹ?</div>
           <div className='board'>
@@ -94,9 +88,9 @@ function App() {
               }
         </div>
         
-      </div> */}
+      </div>
     </div>
   );
 }
 
-export default App;
+export default Community;

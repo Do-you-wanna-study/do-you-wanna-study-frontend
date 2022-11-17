@@ -1,0 +1,155 @@
+
+.community-name{
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  float: left;
+  padding-left : 20px;
+  padding-top : 20px;
+  clear: both;
+  position:fixed;
+}
+.community-body{
+  clear: both;
+  display: flex;
+}
+.position-left{
+  width: 20%;
+  height: 100vh;
+  margin-right: 50px;
+}
+.left-bar{
+  width: 18%;
+  height: 100vh;
+  margin-right:50px;
+  position:fixed;
+  top : 200px;
+}
+.category{
+  text-align: center;
+  vertical-align: middle;
+}
+.category-title{
+  margin-right : 150px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+}
+.search_box{
+  width: 90%;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: solid 3px black;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+}
+.category-checkbox{
+  display : flex;
+  flex-direction: column;
+  text-align: left;
+  vertical-align: middle;
+  align-items: center;
+}
+
+#recruitment-body{
+  width: 80%;
+  height: 100vh;
+  margin-left: 50px;
+  margin-top : 150px;
+  position : relative;
+  overflow : hidden;
+}
+.status-bar{
+  display : flex;
+  width: 100%;
+  position:fixed;
+  top :200px;
+}
+.status{
+  margin-right : 30px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  color: #558FFF;
+}
+.recruitment-sort{
+margin-left: 500px;
+}
+.create{
+  background-color: #131313;
+  border-radius: 15px;
+  color: white;
+  display: inline-block;
+  margin-right: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-size: 0.8rem;
+}
+.recruitment{
+  width: 100%;
+  height: 20%;
+  position : relative;
+  margin-top: 10px;
+}
+.post-area{
+  display: flex;
+  margin-bottom : 20px;
+}
+.post{
+  width:90%;
+}
+.post-top{
+  display : flex;
+  text-align: center;
+  vertical-align: middle;
+
+}
+.post-title{
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 20px;
+}
+.post-content{
+  overflow : hidden;
+  width: 70%;
+  text-align: left;
+  font-family : inherit;
+  font-weight: inherit;
+}
+.tags{
+  display: flex;
+}
+.post-bottom{
+  display:flex;
+}
+.writer{
+  font-family: inherit;
+  font-weight: inherit;
+  color: #A0A0A0;
+  margin-right: 5px;
+  font-size : 12px;
+}
+.comment-area{
+  width: 30%;
+  height: 100%;
+  align-items: center;
+  vertical-align: middle;
+}
+.comment{
+  border: 1px solid #E0E0E0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+}
+.comment-content{
+  display: block;
+}
+
+

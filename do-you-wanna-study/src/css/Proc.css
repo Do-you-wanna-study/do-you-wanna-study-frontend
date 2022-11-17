@@ -1,0 +1,22 @@
+.proc{
+    border-radius: 12px;
+    background-color: #215FFF;
+    color : white;
+    font-size: 0.8rem;
+    width:3rem;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    margin-right: 20px;
+}
+.done{
+    border-radius: 12px;
+    background: #D7D7D7;
+    color : white;
+    font-size: 0.8rem;
+    width:3rem;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    margin-right: 20px;
+}

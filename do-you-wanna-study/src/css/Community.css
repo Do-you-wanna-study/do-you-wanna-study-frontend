@@ -4,7 +4,6 @@
   padding-top: 100px;
   display: flex;
   flex-direction: column;
-  position: fixed;
 }
 
 .community-header {
@@ -27,6 +26,8 @@
 .side-menu {
   width: 278px;
   height: 100%;
+  position: sticky;
+  top: 90px;
 }
 
 .community-body {
@@ -127,20 +128,22 @@
 
 .recruitment-body {
   width: 100%;
-  height: 100vh;
   margin-left: 50px;
   padding-left: 40px;
   padding-right: 40px;
-  position: relative;
-  overflow: hidden;
 }
+
 .status-bar {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
-  height: 48px;
   width: 100%;
+  background-color: white;
+  position: sticky;
+  top: 90px;
+  padding-top: 12px;
+  padding-bottom: 25px;
 }
 .status {
   display: flex;
@@ -187,11 +190,7 @@ select::-ms-expand {
   font-size: 0.8rem;
 }
 .recruitment {
-  padding: 25px 0;
   width: 100%;
-  height: 70%;
-  position: relative;
-  overflow-y: scroll;
 }
 .post-area {
   width: 100%;

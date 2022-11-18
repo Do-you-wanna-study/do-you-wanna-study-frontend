@@ -209,7 +209,7 @@ function Community(props) {
                 })} */}
                       </div>
                       <div className="post-bottom">
-                        <div className="writer">{a.__author__.nickname}</div>
+                        <div className="writer">{a.__author__?.nickname}</div>
                         <div className="writer">{a.deadline}</div>
                       </div>
                     </div>

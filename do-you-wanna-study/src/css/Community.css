@@ -1,155 +1,272 @@
+.community-warpper {
+  width: 100%;
+  max-width: 1320px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
 
-.community-name{
+.community-header {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  background-color: white;
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
-  float: left;
-  padding-left : 20px;
-  padding-top : 20px;
-  clear: both;
-  position:fixed;
+  margin-bottom: 62px;
 }
-.community-body{
+
+.community-body {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.side-menu {
+  width: 278px;
+  height: 100%;
+  position: sticky;
+  top: 90px;
+}
+
+.community-body {
   clear: both;
   display: flex;
 }
-.position-left{
-  width: 20%;
-  height: 100vh;
-  margin-right: 50px;
+.position-left {
 }
-.left-bar{
-  width: 18%;
-  height: 100vh;
-  margin-right:50px;
-  position:fixed;
-  top : 200px;
+.left-bar {
 }
-.category{
+.category {
   text-align: center;
   vertical-align: middle;
 }
-.category-title{
-  margin-right : 150px;
+.category-title {
   font-family: inherit;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
 }
-.search_box{
-  width: 90%;
+
+.search {
+  position: relative;
+}
+.search_box {
+  width: 100%;
+  height: 60px;
   border-top: none;
   border-right: none;
   border-left: none;
-  border-bottom: solid 3px black;
+  border-bottom: solid 1px #131313;
+  outline: none;
   font-family: inherit;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
+  padding-right: 30px;
+  padding-left: 20px;
 }
-.category-checkbox{
-  display : flex;
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 0;
+  bottom: 18px;
+}
+.search_box::placeholder {
+  color: #d5d5d5;
+}
+
+.category-wrapper {
+  width: 100%;
+  display: flex;
   flex-direction: column;
-  text-align: left;
-  vertical-align: middle;
+  flex-gap: 20px;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+.sub-category {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 30px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
-#recruitment-body{
-  width: 80%;
-  height: 100vh;
-  margin-left: 50px;
-  margin-top : 150px;
-  position : relative;
-  overflow : hidden;
+.row > input {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: 0;
 }
-.status-bar{
-  display : flex;
+
+.row > label {
+  width: fit-content;
+  color: #131313;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.recruitment-body {
   width: 100%;
-  position:fixed;
-  top :200px;
+  margin-left: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
-.status{
-  margin-right : 30px;
+
+.status-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+  position: sticky;
+  top: 90px;
+  padding-top: 12px;
+  padding-bottom: 25px;
+}
+.status {
+  display: flex;
+  margin-right: 30px;
+  align-items: center;
+  height: 100%;
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
-  color: #558FFF;
+  color: #558fff;
+  cursor: pointer;
 }
-.recruitment-sort{
-margin-left: 500px;
+.status-wrapper {
+  display: flex;
+  flex-direction: row;
 }
-.create{
+.recruitment-sort > select {
+  outline: none;
+  border: 1px solid #323232;
+  border-radius: 30px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 7px 14px;
+  -webkit-appearance: none; /* for chrome */
+  -moz-appearance: none; /*for firefox*/
+  appearance: none;
+  background: url("images/down-arrow.png") no-repeat 90% 50%/10px auto;
+  background-width: 7px;
+}
+
+select::-ms-expand {
+  display: none; /*for IE10,11*/
+}
+.create {
   background-color: #131313;
   border-radius: 15px;
   color: white;
   display: inline-block;
-  margin-right: 10px;
-  padding-left: 3px;
-  padding-right: 3px;
-  font-size: 0.8rem;
+  outline: none;
+  border: 1px solid #323232;
+  border-radius: 30px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 7px 14px;
 }
-.recruitment{
+.recruitment {
   width: 100%;
-  height: 20%;
-  position : relative;
-  margin-top: 10px;
 }
-.post-area{
+.post-area {
+  width: 100%;
+  height: 200px;
   display: flex;
-  margin-bottom : 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.post{
-  width:90%;
+.post {
+  width: 90%;
 }
-.post-top{
-  display : flex;
+.post-top {
+  display: flex;
   text-align: center;
   vertical-align: middle;
-
 }
-.post-title{
+.post-title {
   font-family: inherit;
   font-weight: 500;
   font-size: 20px;
+  margin-left: 12px;
 }
-.post-content{
-  overflow : hidden;
-  width: 70%;
+.post-content {
+  margin-top: 11px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #696969;
   text-align: left;
-  font-family : inherit;
-  font-weight: inherit;
+  height: 48px;
+  margin-bottom: 15px;
 }
-.tags{
+.tags {
   display: flex;
 }
-.post-bottom{
-  display:flex;
+.post-bottom {
+  display: flex;
+  margin-top: 15px;
 }
-.writer{
+.writer {
   font-family: inherit;
   font-weight: inherit;
-  color: #A0A0A0;
+  color: #a0a0a0;
   margin-right: 5px;
-  font-size : 12px;
+  font-size: 12px;
 }
-.comment-area{
-  width: 30%;
+.comment-area {
   height: 100%;
+  display: flex;
   align-items: center;
-  vertical-align: middle;
 }
-.comment{
-  border: 1px solid #E0E0E0;
+.comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e0e0e0;
   border-radius: 100px;
   box-sizing: border-box;
-  width: 50px;
-  height: 50px;
+  width: 68px;
+  height: 68px;
 }
-.comment-content{
-  display: block;
+.comment-length {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #323232;
 }
-
-
+.comment-content {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 18px;
+  color: #696969;
+}

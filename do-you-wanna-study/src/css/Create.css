@@ -40,16 +40,51 @@
     width: 100%;
     height: 40%;
     align-items: center;
-
-}
-.createContent{
+    border : 0.5px solid #E1E1E1;
     font-family: inherit;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
-    color: #AAAAAA;
+    
+
 }
+.createRegion{
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin: 0px;
+    margin-bottom : 50px;
+    background: #FFFFFF;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+.createPeople{
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin: 0px;
+    margin-bottom : 50px;
+    background: #FFFFFF;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
 .createPost{
     background: #6D7CFF;
-    border-radius: 5px;
+    border-radius: 15px;
+    display : inline-block;
+    padding: 5px;
+    margin : 5px;
+}
+.createCancel{
+    border-radius: 15px;
+    display : inline-block;
+    padding: 5px;
+    border : 2px solid black;
 }

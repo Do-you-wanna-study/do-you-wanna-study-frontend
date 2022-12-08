@@ -4,24 +4,27 @@ import '../css/login.css';
 import {Button} from 'react-bootstrap';
 import {useNavigate} from 'react-router-dom';
 
+
+
 function Login(props){
-    
     let [email,setEmail] = useState('');
     let [password,setPassword] = useState('');
     let [ fail, setFail] = useState(false);
+
     const onClick = ()=>{
-        axios.post('http://43.200.6.177:8000/auth/login',{email: email,password: password}).then((res)=>{
+        axios.post('http://43.200.6.177:8000/auth/login',{email: email, password: password}, {withCrendentials: true, crossDomain: true})
+        .then((res)=>{
             if(res.data.success){
                 props.setLogin(true);
+                props.setUser(res.data.data);
+                axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.data.accessToken}`;
                 navigate('/recruitment/1/all');
             }
     }).catch((err)=>{
-        if(err.response.status == '401'){
-            setFail(true);
-        }else{
-            console.log(err.response);
-        }
         
+        !err.response.data.success && setFail(true);
+        
+        console.log(err.response);
     })
     }
     const navigate = useNavigate('/signup');

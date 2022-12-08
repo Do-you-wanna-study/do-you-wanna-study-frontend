@@ -4,7 +4,7 @@ import '../css/Tag.css';
 function Tag(props){
     return(
         <div className="tag">
-            #{props.tag}
+            {props.tag}
         </div>
     );
 }

@@ -26,8 +26,8 @@ function Create1(props){
             <input className="createTag" placeholder='#태그 입력 (최대 5개)' onChange={onTagChange}/>
             <textarea className="createContent" placeholder='내용을 입력하세요' onChange={onDescriptionChange}></textarea>
 
-            <div className='createPost' onClick={()=>{navigate('/create2/'+community_id)}}>모집하기</div>
-            <div className='createCancel' onClick={()=>{navigate(-1)}}>취소</div>
+            <button className='createPost' onClick={()=>{navigate('/create2/'+community_id)}}>모집하기</button>
+            <button className='createCancel' onClick={()=>{navigate(-1)}}>취소</button>
             
         </>
     );

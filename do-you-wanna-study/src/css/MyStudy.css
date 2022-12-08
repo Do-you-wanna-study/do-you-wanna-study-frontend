@@ -1,0 +1,29 @@
+.myStudy{
+    width: 80%;
+    height: 100%;
+    margin-top: 5%;
+    text-align: left;
+    font-family: inherit;
+}
+.myStudy_header{   
+    font-weight: 700;
+    font-size: 2rem;
+}
+.myStudy_list{
+    margin-top : 2%;
+    margin-bottom : 2%;
+    border-bottom: 0.3px solid black;
+}
+.groupName{
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.study_end{
+    margin-left: 79%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    background-color: yellow;
+    border-radius: 15px;
+    border: 2px solid black;
+}

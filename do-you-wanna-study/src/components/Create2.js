@@ -18,16 +18,13 @@ function Create2(props){
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     let id = parseInt(community_id)
-    let title = toString(props.title)
-    let description = toString(props.description)
     
 
     const onClick = ()=>{
         console.log(props.title, props.description, null, region, recruitment, props.tag, community_id);
-        axios.post('http://43.200.6.177:8000/recruitment',{title : title, description : description, deadline : null, region : region, recruitment_number : recruitment, hashtag: props.tag, community_id : id})
+        axios.post('http://43.200.6.177:8000/recruitment',{title : props.title, description : props.description, deadline : endDate, region : region, recruitment_number : recruitment, hashtag: props.tag, community_id : id})
        .then((res)=>{
-           console.log(res.data.data);
-           return navigate(-2)
+           return navigate(-2);
        }).catch((err)=>{console.log(err);})
        }
     
@@ -38,8 +35,8 @@ function Create2(props){
             <DatePicker selected={startDate} dateFormat="yyyy/MM/dd" placeholderText='시작일을 선택하세요' onChange={(date) => setStartDate(date)} />
             <DatePicker selected={endDate} dateFormat="yyyy/MM/dd" placeholderText='마감일을 선택하세요' minDate={startDate} onChange={(date) => setEndDate(date)} />
 
-            <div className='createPost' onClick={ onClick }>모집하기</div>
-            <div className='createCancel' onClick={()=>{navigate(-2)}}>취소</div>
+            <button className='createPost' onClick={ onClick }>모집하기</button>
+            <button className='createCancel' onClick={()=>{navigate(-2)}}>취소</button>
             
         </>
     );

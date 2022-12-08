@@ -1,0 +1,26 @@
+.review_body{
+    width:100%;
+    height:100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.review_container{
+    width:100%;
+    height:20%;
+    margin-bottom: 5%;
+}
+.review_name{
+    text-align: left;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+}
+.review_box{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    display: block;
+}

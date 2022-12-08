@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import "../css/Community.css";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,11 +13,17 @@ import Proc from "./Proc";
 import Tag from "./Tag";
 
 function Community(props) {
+
+  var isEmpty = function(value){
+    if( value === "" || value == null || value === undefined || ( value != null && typeof value == "object" && !Object.keys(value).length ) ){
+      return true
+    }else{
+      return false
+    }
+  };
+
   let navigate = useNavigate();
   const [post, setPost] = useState([{}]);
-  // const [post,setPost] = useState([
-  // {title : "중앙대학교 6p/매주 토요일 모각코", description : "박정훈 박호동 장민혁의 캡스톤 스터디를 도와주실 분 급구 디자이너 급해요", status : 'proc', recruitmentToTagList : ["상도","박정훈","박호동","장민혁","캡스톤디자인"], writer : 'hodongpark', deadline : '마감 3일전', comment : 3}
-  // ,{title :"토익 990목표/격주 일요일 6시", description : "토익 만점으로 영어 부실 사람 드루와", status : 'done', tag : ["토익","영어","외국어","유학","시험"], writer : 'jeonghoonpark', deadline : '마감 2일전', comment : 5}]);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState(false);
   const [region, setRegion] = useState(false);
@@ -27,9 +33,8 @@ function Community(props) {
     "철산역React",
   ]);
   const [community, setCommunity] = useState(false);
-  const location = useLocation();
-
   const {community_id} = useParams();
+
 
   const createClick = () => {
     navigate("/create/"+ community_id);
@@ -38,7 +43,7 @@ function Community(props) {
   useEffect(() => {
     const postData = async () => {
       await axios
-        .get("http://43.200.6.177:8000/recruitment/1")
+        .get("http://43.200.6.177:8000/recruitment")
         .then((res) => {
           setPost(res.data.data);
         })
@@ -49,17 +54,13 @@ function Community(props) {
     postData();
   }, []);
 
-  const searchClick = async () => {
-    await axios
-      .post("http://43.200.6.177:8000/recruitment/1/all", search)
+  const searchClick = async() => {
+      await axios.get("http://43.200.6.177:8000/recruitment?search="+search,{headers:{community:1, pageno:1}})
       .then((res) => {
-        if (res.data.status == "ok") {
-          axios.get("http://43.200.6.177:8000/recruitment/1/all", { search });
-        }
+        setPost(res.data.data);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err)=>{console.log(err);})
+     
   };
 
   return (
@@ -76,12 +77,12 @@ function Community(props) {
                   setSearch(e.target.value);
                 }}
               />
-              <FontAwesomeIcon
+              <button><FontAwesomeIcon
                 className="search-icon"
                 icon={faSearch}
                 size="xs"
-                onClick={searchClick}
-              />
+                onClick={()=>{searchClick()}}
+              /></button>
             </div>
             <div className="category-wrapper">
               <div className="category">
@@ -135,9 +136,9 @@ function Community(props) {
                 {region && (
                   <div className="category-checkbox">
                     <input type="checkbox" name="region" value="all" />
-                    전체 지역
+                    <label for='all'>전체 지역</label>
                     <input type="checkbox" name="region" value="my-position" />
-                    내 위치 근처
+                    <lagel for='location'>내 위치 근처</lagel>
                   </div>
                 )}
               </div>
@@ -175,9 +176,9 @@ function Community(props) {
             </div>
             <div className="recruitment-sort">
               {props.login && (
-                <div className="create" onClick={createClick}>
+                <button className="create" onClick={createClick}>
                   <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>글쓰기
-                </div>
+                </button>
               )}
               <select>
                 <option value="latest">최신순</option>
@@ -187,28 +188,19 @@ function Community(props) {
           </div>
           <div className="recruitment">
             {post
-              .concat(post)
-              .concat(post)
               .map((a,i) => {
                 return (
                   <div className="post-area" key={i}>
                     <div className="post">
                       <div className="post-top">
-                        <Proc />
-                        <div className="post-title">{a.title}</div>
+                        <Proc status={a.status}/>
+                        <button className="post-title" onClick={()=>{navigate("/recruitmentPost/"+community_id+"/"+a.id)}}> {a.title}</button>
                       </div>
-                      <div className="post-content">{a.description}</div>
+                      <div className="post-content" onClick={()=>{navigate("/recruitmentPost/"+community_id+"/"+a.id)}}> {a.description}</div>
                       <div className="tags">
-                        <Tag tag={"test"} />
-                        <Tag tag={"test"} />
-                        <Tag tag={"test"} />
-                        <Tag tag={"test"} />
-                        <Tag tag={"test"} />
-                        {/* {a.recruitmentToTagList.map((x)=>{
-                  return(
-                    <Tag tag={x}/>
-                  );
-                })} */}
+                        { 
+                         isEmpty(a.recruitmentToTagList) ? null : a.recruitmentToTagList?.map((x,i)=>{return(<Tag tag={x.__tag__.name} key={i}/>);}) 
+                        }
                       </div>
                       <div className="post-bottom">
                         <div className="writer">{a.__author__?.nickname}</div>

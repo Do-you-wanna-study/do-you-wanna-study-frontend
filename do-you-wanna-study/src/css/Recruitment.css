@@ -1,0 +1,172 @@
+.recruitment_header{
+    padding-bottom: 3%;
+    border-bottom: solid grey 0.7px;
+}
+.recruitment_titlebar{
+    display: flex;
+    position: relative;
+    margin-top: 3%;
+}
+.recruitment_title{
+    margin-left: 2%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    align-items: center;
+}
+.recruitment_apply{
+    position : absolute;
+    right: 80px;
+    border : solid #6D7CFF 1px;
+    border-radius: 15px;
+    color : #6D7CFF;
+    background-color: white;
+    vertical-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    padding: 1%;
+}
+.recruitment_writerbar{
+    display: flex;
+    margin-top: 2%;
+}
+.recruitment_writer{
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 21px;
+    margin-left: 1%;
+}
+.recruitment_createDate{
+    margin-left: 2%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 21px;
+    color: #BABABA;
+}
+.recruitment_subcategory{
+    display:flex;
+    margin-top: 1%;
+}
+.recruitment_subtitle{
+    margin-left: 2%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    color: #696969;
+
+}.recruitment_subcontent{
+    margin-left: 3%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    align-items: center;
+    color: #696969;
+}
+.recruitment_body{
+    padding-bottom: 3%;
+    border-bottom: solid grey 0.7px;
+    padding-left: 3%;
+    padding-top: 3%;
+    height:50%;
+    text-align: left;
+}
+.recruitment_footer{
+    margin-top: 2%;
+    position : relative;
+    width: 100%;
+}
+
+.recruitment_commentContainer{
+    width: 100%;
+    display: block;
+}
+.recruitment_tags{
+    display:flex;
+    margin-left: 1%;
+    padding-bottom: 1%;
+    
+}
+.comment_logo{
+    margin-right:5px;
+}
+.recruitment_commentNumber{
+    border: solid #AAAAAA 1px;
+    border-radius: 20px;
+    padding: 4px 13px;
+    position: absolute;
+    right:50px;
+    font-size: 0.8rem;
+    
+}
+.recruitment_commentContainer{
+    background-color: #FAFAFA;
+    margin-top:2%;
+    
+    
+}
+.recruitment_flexBox{
+    display: flex;
+}
+.recruitment_commentBox{
+    margin-top : 20px;
+    margin-left : 3%;
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    border : 0.5px solid #E1E1E1;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    box-sizing: border-box;
+    
+}
+.recruitment_commentCreate{
+    margin-top : 20px;
+    margin-left: 1%;
+    height: 200%;
+    border-radius: 20px;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    background-color: #6D7CFF;
+    color:white;
+    padding: 4px 13px;
+}
+.recruitment_comment{
+    margin-left:3%;
+    margin-top: 2%;
+    margin-right:5%;
+    text-align: left;
+    border-bottom: 0.5px grey solid;
+}
+.comment_title{
+    font-family: inherit;
+    font-style: normal;
+    font-weight:400;
+}
+.comment_date{
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 21px;
+    color: #BABABA;
+}

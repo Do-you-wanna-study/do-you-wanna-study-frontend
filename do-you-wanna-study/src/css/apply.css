@@ -1,0 +1,23 @@
+.apply_text{
+    margin-top : 3%;
+    width: 90%;
+    height: 50%;
+    max-height: 50%;
+}
+.recruitment_cancel{
+    position : absolute;
+    right: 200px;
+    border : solid black 1px;
+    border-radius: 15px;
+    color : black;
+    background-color: white;
+    vertical-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    padding: 1%;
+}

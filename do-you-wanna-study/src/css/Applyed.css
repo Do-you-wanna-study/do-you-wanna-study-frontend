@@ -1,0 +1,48 @@
+.mypage_apply{
+    margin-top: 5%;
+    margin-left: 3%;
+    height: 100%;
+}
+.apply_name{
+    margin-top: 3%;
+    border-top: solid 0.5px gray;
+    display : flex;
+    padding: 2%;
+}
+.study_name{
+    margin-left: 3%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    background-color: white;
+}
+.study_writer{
+    margin-left: 50%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+}
+.study_deadline{
+    margin-left: 10%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+}
+.admit{
+    margin-left: 5%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    background-color: yellow;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+.create_study{
+    margin-left: 79%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    background-color: yellow;
+    border-radius: 15px;
+    border: 2px solid black;
+}

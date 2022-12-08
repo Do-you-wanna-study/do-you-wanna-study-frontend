@@ -9,6 +9,7 @@
 button {
   outline: none;
   border: none;
+  background-color: white;
 }
 
 .App {
@@ -151,13 +152,11 @@ button {
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
-  border-bottom: 1px solid #cecece;
+  border : none;
 }
 
 .logo {
-  width: 200px;
-  height: 50px;
-  margin-right: 86px;
+ background-color: white;
 }
 
 .header-wrapper {

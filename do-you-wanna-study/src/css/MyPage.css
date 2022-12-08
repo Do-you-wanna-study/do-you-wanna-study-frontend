@@ -1,0 +1,15 @@
+.logout{
+    margin-left: 5%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size:1rem;
+    background-color: yellow;
+    border-radius: 20px;
+    border: 2px solid black;
+    height:50px;
+    margin-left: 70%;
+}
+.top_body{
+    display: flex;
+}

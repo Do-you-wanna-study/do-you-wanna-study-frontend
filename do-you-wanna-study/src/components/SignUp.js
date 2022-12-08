@@ -62,7 +62,7 @@ function SignUp(){
             <input
                 id="passwordAgain"
                 name="passwordAgain"
-                type="passwordAgain"
+                type="password"
                 placeholder="최소 6자"
                 minLength ='6'
                 onChange={(e)=> {setPasswordAgain(e.target.value)}}

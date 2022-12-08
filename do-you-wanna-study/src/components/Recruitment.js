@@ -21,14 +21,10 @@ function Recruitment(props){
             }
           }
         const postData = async() => {
-            const idParams = {id : recruitment_id}
-            console.log(idParams);
-            await axios.post("http://43.200.6.177:8000/recruitment/detail/comment?id="+recruitment_id, {description: comment}, config)
+            await axios.post(`http://43.200.6.177:8000/recruitment/detail/comment?id=${recruitment_id}`, {content: comment}, config)
             .then((res)=>{
-                var temp = commentList;
-                const nowTime = new Date();
-                setCommentList([...temp,{__user__:{nickname: props.user.nickname}, content: {comment}, createdAt: nowTime}]);
-                console.log(res.data.data);
+                setCommentList([...commentList,]);
+                setComment("");
             }).catch((err)=>{console.log(err);})
         }
         props.login ? postData() : navigate('/login')
@@ -98,19 +94,20 @@ function Recruitment(props){
                 </div>
                 <div className='recruitment_commentContainer'>
                     <div className='recruitment_flexBox'>
-                        <textarea className='recruitment_commentBox' placeholder='댓글을 작성해주세요' onChange={(e)=>{setComment(e.target.value)}}></textarea>
+                        <textarea className='recruitment_commentBox' placeholder='댓글을 작성해주세요' value={comment} onChange={(e)=>{setComment(e.target.value)}}></textarea>
                         <button className='recruitment_commentCreate' onClick={()=>{commentCreate()}}>등록</button>
                     </div>
-                    {commentList?.map((a,i)=>{
+                    {recruitment.recruitmentCommentList?.map((a,i)=>{
                         return(
                             <div className='recruitment_comment' key={i}>
                                 <div className='comment_title'>{a.__user__?.nickname}</div>
-                                <div className='comment_date'>{a.createdAt}</div>
+                                <div className='comment_date'>{a.createdAt.split('T')[0]}</div>
                                 <div className='comment_content'>{a.content}</div>
                             </div>
                         );
                     })
                     }
+                    
                 </div>
             </div>
         </>

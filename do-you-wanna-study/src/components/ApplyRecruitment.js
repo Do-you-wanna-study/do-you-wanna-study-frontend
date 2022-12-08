@@ -21,15 +21,14 @@ const ApplyRecruitment = ()=>{
     return(
         <div className="mypage_apply">
             <div className="status-wrapper">
-                <div className="status">지원중</div>
-                <div className="status">모집중</div>
+                <div className="status">내가 쓴 글</div>
             </div>
             {postList.map((a,i)=>{
                 return(
                     <div className="apply_name"key={i}>
                         <button className="study_name" onClick={()=>{navigate("/recruitment/"+a.id+"/applyed")}}>{a.title}</button>
                         <div className="study_writer">{a.description}</div>
-                        <div className="study_deadline">{a.createdAt}</div>
+                        <div className="study_deadline">{a.createdAt.split('T')[0]}</div>
                     </div>
                 );
             })}

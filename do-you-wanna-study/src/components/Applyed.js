@@ -1,20 +1,22 @@
-import React, { memo,useEffect,useState } from "react";
+import React, { useEffect,useState } from "react";
 import '../css/Applyed.css';
 import '../App.css';
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import CreateStudy from "./CreateStudy.js";
 
 const Applyed = (props) => {
     const {recruitment_id} = useParams();
     const [applyList,setApplyList] = useState([]);
     const [modal,setModal] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(()=>{
         const readApply = async()=>{
             await axios.get("http://43.200.6.177:8000/recruitment/detail/readapply?id="+recruitment_id)
             .then((res)=>{
                 setApplyList(res.data.data);
+                console.log(res.data.data);
             })
             .catch((err)=>{console.log(err);})
         }
@@ -31,6 +33,7 @@ const Applyed = (props) => {
         }
         admit();
     }
+    
 
     return(
         <div className="mypage_apply">
@@ -44,7 +47,7 @@ const Applyed = (props) => {
                 return(
                     <div className="apply_name" key={i}>
                         <div className="study_name">{a.content}</div>
-                        <div className="study_writer">{a.__user__?.nickname}</div>
+                        <div className="study_writer"><button onClick={()=>{navigate(`/applicant/${a.__user__.nickname}`)}}>{a.__user__?.nickname}</button></div>
                         <div className="study_deadline">{a.createdAt}</div>
                         <button className="admit" onClick={()=>{applyAdmit(a.id)}}>지원서 수락</button>
                     </div>

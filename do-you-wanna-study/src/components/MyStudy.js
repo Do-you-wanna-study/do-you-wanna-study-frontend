@@ -37,9 +37,8 @@ function MyStudy(){
                     <div key={i}>
                         <div className="groupName" >{a.__studyGroup__.groupName}</div>
                         <div className="startDate">{a.__studyGroup__.startDate} 
-                        {a.__studyGroup__.isFinished 
-                        ? <button className="study_end" onClick={()=>{studyEnd(a.__studyGroup__.id)}}>회고하기</button> 
-                        : <button className="study_end" onClick={()=>{studyEnd(a.__studyGroup__.id)}}>스터디 종료</button>}
+                        {a.__studyGroup__.isFinished && <button className="study_end" onClick={()=>{studyEnd(a.__studyGroup__.id)}}>회고하기</button> }
+                        
                         </div>
                         <div className="period">{a.__studyGroup__.period}주</div>
                     </div> 

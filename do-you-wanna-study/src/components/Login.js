@@ -45,7 +45,7 @@ function Login(props){
 
             <br/>
             <Button onClick={onClick}>로그인</Button>
-            <Button onClick={ navigate }>회원가입</Button>
+            <Button onClick={()=>{navigate('/signup')} }>회원가입</Button>
         </div>
     );
 }

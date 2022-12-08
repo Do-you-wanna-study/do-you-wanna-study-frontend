@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import {  Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Community from "./components/Community.js";
@@ -14,6 +14,9 @@ import MyPage from "./components/MyPage";
 import Applyed from "./components/Applyed";
 import ApplyRecruitment from "./components/ApplyRecruitment";
 import Review from "./components/Review.js";
+import ApplicantScore from "./components/ApplicantScore";
+import MyScore from "./components/MyScore";
+import axios from "axios";
 
 
 function App() {
@@ -45,6 +48,13 @@ function App() {
       navigate("/signup");
     }
   };
+
+  useEffect(()=>{
+    const redirection = ()=>{
+      return navigate('/recruitment/1/all');
+    }
+    redirection();
+  },[])
 
   return (
     <div className="App">
@@ -134,6 +144,14 @@ function App() {
           <Route
             path="/mystudy/:study_id/review"
             element={<Review/>}
+          />
+          <Route
+            path="/mypage/score"
+            element={<MyScore/>}
+          />
+          <Route
+            path="/applicant/:nickname"
+            element={<ApplicantScore/>}
           />
         </Routes>
       </div>

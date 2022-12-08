@@ -34,6 +34,7 @@ function Community(props) {
   ]);
   const [community, setCommunity] = useState(false);
   const {community_id} = useParams();
+  const [filter,setFilter] = useState(0);
 
 
   const createClick = () => {
@@ -62,6 +63,13 @@ function Community(props) {
       .catch((err)=>{console.log(err);})
      
   };
+
+  // const status = async() => {
+  //   await axios.get(`http://43.200.6.177:8000/recruitment/community/1/${params}`)
+  //   .then((res)=>{setPost(res.data.data);
+  //   console.log(res.data.data);})
+  //   .catch((err)=>{console.log(err);})
+  // }
 
   return (
     <div className="community-warpper">
@@ -170,9 +178,9 @@ function Community(props) {
         <div className="recruitment-body">
           <div className="status-bar">
             <div className="status-wrapper">
-              <div className="status">전체</div>
-              <div className="status">모집중</div>
-              <div className="status">모집완료</div>
+              <div className="status" onClick={()=>{}}>전체</div>
+              <div className="status" onClick={()=>{}}>모집중</div>
+              <div className="status" onClick={()=>{}}>모집완료</div>
             </div>
             <div className="recruitment-sort">
               {props.login && (

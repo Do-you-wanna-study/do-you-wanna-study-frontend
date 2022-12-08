@@ -9,7 +9,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import {faker} from '@faker-js/faker';
 
 ChartJS.register(
   CategoryScale,
@@ -29,30 +28,31 @@ export const options = {
   },
   responsive: true,
   plugins: {
-    legend: {
-      position: 'right',
-    },
     title: {
-      display: true,
-      text: 'Chart.js Horizontal Bar Chart',
+
+      display: false,
     },
   },
 };
 
 const labels = ['총점', '실력', '인성', '성실', '도움'];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: labels.map(() => faker.datatype.number({ min: 1, max: 5 })),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    }
-  ],
-};
-
-export default function Chart() {
-  return <Bar options={options} data={data} />;
+function Chart(props) {
+  
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: '5점 만점',
+        data: [props.grade.total,props.grade.skill,props.grade.kindness,props.grade.sincerity,props.grade.helpful],
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      }
+    ],
+  };
+  return (
+  <Bar options={options} data={data} />
+  )
 }
+
+export default Chart;

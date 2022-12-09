@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Navigate, useNavigate, useParams} from 'react-router-dom';
+import { useNavigate, useParams} from 'react-router-dom';
 import "../css/Recruitment.css";
 import Proc from './Proc.js';
 import "../css/apply.css";

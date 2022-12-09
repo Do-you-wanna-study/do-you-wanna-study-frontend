@@ -10,10 +10,11 @@ const Applyed = (props) => {
     const [applyList,setApplyList] = useState([]);
     const [modal,setModal] = useState(false);
     const navigate = useNavigate();
+    const [admit,setAdmit] = useState(false);
 
     useEffect(()=>{
         const readApply = async()=>{
-            await axios.get("http://43.200.6.177:8000/recruitment/detail/readapply?id="+recruitment_id)
+            await axios.get(`http://43.200.6.177:8000/recruitment/detail/readapply?id=${recruitment_id}`)
             .then((res)=>{
                 setApplyList(res.data.data);
                 console.log(res.data.data);
@@ -39,7 +40,6 @@ const Applyed = (props) => {
         <div className="mypage_apply">
             {modal && <CreateStudy recruitment_id={recruitment_id}/>}
             <div className="status-wrapper">
-                <div className="status">지원중</div>
                 <div className="status">모집중</div>
                 <button className="create_study" onClick={()=>{setModal(!modal)}}>스터디 생성</button>
             </div>
@@ -48,8 +48,11 @@ const Applyed = (props) => {
                     <div className="apply_name" key={i}>
                         <div className="study_name">{a.content}</div>
                         <div className="study_writer"><button onClick={()=>{navigate(`/applicant/${a.__user__.nickname}`)}}>{a.__user__?.nickname}</button></div>
-                        <div className="study_deadline">{a.createdAt}</div>
-                        <button className="admit" onClick={()=>{applyAdmit(a.id)}}>지원서 수락</button>
+                        <div className="study_deadline">{a.createdAt.split('T')[0]}</div>
+                        { admit
+                        ? <button className="admited" onClick={()=>{applyAdmit(a.id); setAdmit(true)}}>지원서 수락</button>
+                        : <button className="admit" onClick={()=>{applyAdmit(a.id); setAdmit(true)}}>지원서 수락</button>
+                        }
                     </div>
                 );
             })} 

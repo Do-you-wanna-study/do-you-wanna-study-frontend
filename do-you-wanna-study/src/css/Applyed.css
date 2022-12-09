@@ -19,11 +19,16 @@
 
 }
 .study_writer{
-    margin-left: 50%;
+    margin-left: 10%;
     font-family: inherit;
     font-style: normal;
     font-weight: 600;
-    width:10%;
+    width:50%;
+    height: 100px;
+    max-height: 100px;
+    overflow: hidden; 
+    text-overflow:  ellipsis;
+    white-space: nowrap;
 }
 .study_deadline{
     margin-left: 10%;
@@ -38,6 +43,15 @@
     font-style: normal;
     font-weight: 600;
     background-color: yellow;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+.admited{
+    margin-left: 5%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    background-color: gray;
     border-radius: 15px;
     border: 2px solid black;
 }

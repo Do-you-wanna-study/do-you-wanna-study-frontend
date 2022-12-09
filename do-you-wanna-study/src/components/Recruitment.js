@@ -23,8 +23,6 @@ function Recruitment(props){
         const postData = async() => {
             await axios.post(`http://43.200.6.177:8000/recruitment/detail/comment?id=${recruitment_id}`, {content: comment}, config)
             .then((res)=>{
-                setCommentList([...commentList,]);
-                setComment("");
                 console.log(res.data.data);
             }).catch((err)=>{console.log(err);})
         }
@@ -43,12 +41,10 @@ function Recruitment(props){
     
 
     useEffect(() => {
-        const idParams = {id : recruitment_id}
         const getData = async() => {
             await axios.get(`http://43.200.6.177:8000/recruitment/detail?id=${recruitment_id}`)
             .then((res) => {
-                setRecruitment(res.data.data); 
-                setCommentList(res.data.data.recruitmentCommentList);
+                setRecruitment(res.data.data);
              })
             .catch((err)=>{console.log(err);})
         }
@@ -90,7 +86,7 @@ function Recruitment(props){
                     })}
                     <div className='recruitment_commentNumber'>
                         <img className='comment_logo' src={process.env.PUBLIC_URL+ '/Vector.png'} alt='comment'/>
-                        댓글 {commentList?.length}
+                        댓글 {recruitment.recruitmentCommentList?.length}
                     </div>
                 </div>
                 <div className='recruitment_commentContainer'>
@@ -98,7 +94,7 @@ function Recruitment(props){
                         <textarea className='recruitment_commentBox' placeholder='댓글을 작성해주세요' value={comment} onChange={(e)=>{setComment(e.target.value)}}></textarea>
                         <button className='recruitment_commentCreate' onClick={()=>{commentCreate()}}>등록</button>
                     </div>
-                    {recruitment.recruitmentCommentList ? recruitment.recruitmentCommentList?.map((a,i)=>{
+                    { recruitment.recruitmentCommentList?.map((a,i)=>{
                         return(
                             <div className='recruitment_comment' key={i}>
                                 <div className='comment_title'>{a.__user__?.nickname}</div>
@@ -106,7 +102,7 @@ function Recruitment(props){
                                 <div className='comment_content'>{a.content}</div>
                             </div>
                         );
-                    }) : null
+                    })
                     }
                     
                 </div>

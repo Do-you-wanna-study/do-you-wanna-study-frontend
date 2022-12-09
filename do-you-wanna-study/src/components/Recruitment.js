@@ -25,6 +25,7 @@ function Recruitment(props){
             .then((res)=>{
                 setCommentList([...commentList,]);
                 setComment("");
+                console.log(res.data.data);
             }).catch((err)=>{console.log(err);})
         }
         props.login ? postData() : navigate('/login')
@@ -43,8 +44,8 @@ function Recruitment(props){
 
     useEffect(() => {
         const idParams = {id : recruitment_id}
-        const getData = () => {
-            axios.get("http://43.200.6.177:8000/recruitment/detail",{params: idParams})
+        const getData = async() => {
+            await axios.get(`http://43.200.6.177:8000/recruitment/detail?id=${recruitment_id}`)
             .then((res) => {
                 setRecruitment(res.data.data); 
                 setCommentList(res.data.data.recruitmentCommentList);
@@ -97,7 +98,7 @@ function Recruitment(props){
                         <textarea className='recruitment_commentBox' placeholder='댓글을 작성해주세요' value={comment} onChange={(e)=>{setComment(e.target.value)}}></textarea>
                         <button className='recruitment_commentCreate' onClick={()=>{commentCreate()}}>등록</button>
                     </div>
-                    {recruitment.recruitmentCommentList?.map((a,i)=>{
+                    {recruitment.recruitmentCommentList ? recruitment.recruitmentCommentList?.map((a,i)=>{
                         return(
                             <div className='recruitment_comment' key={i}>
                                 <div className='comment_title'>{a.__user__?.nickname}</div>
@@ -105,7 +106,7 @@ function Recruitment(props){
                                 <div className='comment_content'>{a.content}</div>
                             </div>
                         );
-                    })
+                    }) : null
                     }
                     
                 </div>

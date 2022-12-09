@@ -36,7 +36,7 @@ function Applying(props){
                 </div>
             </div>
             <textarea className='apply_text' placeholder='지원서를 작성해주세요' onChange={(e)=>{setDescription(e.target.value)}}></textarea>
-            <button className='recruitment_apply' onClick={apply}>지원하기</button>
+            <button className='recruitment_apply' onClick={()=>{apply()}}>지원하기</button>
             <button className='recruitment_cancel' onClick={()=>{navigate(-1)}}>취소</button>
         </>
     );

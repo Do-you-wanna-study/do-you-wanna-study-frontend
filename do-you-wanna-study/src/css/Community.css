@@ -223,6 +223,7 @@ select::-ms-expand {
   height: 48px;
   margin-bottom: 15px;
   background-color: white;
+  text-overflow: ellipsis;
 }
 .tags {
   display: flex;
